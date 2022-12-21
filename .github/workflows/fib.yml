@@ -1,4 +1,4 @@
-name: Action na Zadanie 1 - czesc obowiazgowa, pkt 3 
+name: Action na Zadanie 1 - czesc obowiazkowa, pkt 3 
 
 on:
   workflow_dispatch:

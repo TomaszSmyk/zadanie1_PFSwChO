@@ -42,15 +42,14 @@ jobs:
           images: |
             ghcr.io/tomaszsmyk/zadanie1
           # generate Docker tags based on the following events/attributes
-          tags: |
+          tags: | 
+            type=schedule
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
-          #  type=schedule
-          #  type=ref,event=branch
-          #  type=ref,event=pr
-          #  type=semver,pattern={{version}}
-
-          #  type=semver,pattern={{major}}
-          # type=sha
+            type=semver,pattern={{major}}
+            type=sha
           
       - name: Cache Docker layers
         uses: actions/cache@v2

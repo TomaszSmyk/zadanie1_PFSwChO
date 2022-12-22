@@ -67,8 +67,8 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          cache-from: type=registry,src=/tmp/.buildx-cache
-          cache-to: type=registry,mode=max,dest=/tmp/.buildx-cache-new
+          cache-from: type=registry
+          cache-to: type=registry,mode=max
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           

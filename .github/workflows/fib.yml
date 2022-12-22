@@ -43,13 +43,14 @@ jobs:
             ghcr.io/tomaszsmyk/zadanie1
           # generate Docker tags based on the following events/attributes
           tags: |
-            type=schedule
-            type=ref,event=branch
-            type=ref,event=pr
-            type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
-            type=sha
+          #  type=schedule
+          #  type=ref,event=branch
+          #  type=ref,event=pr
+          #  type=semver,pattern={{version}}
+
+          #  type=semver,pattern={{major}}
+          # type=sha
           
       - name: Cache Docker layers
         uses: actions/cache@v2
@@ -67,8 +68,8 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,mode=max,dest=/tmp/.buildx-cache-new
+          cache-from: type=registry,src=/tmp/.buildx-cache
+          cache-to: type=registry,mode=max,dest=/tmp/.buildx-cache-new
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           

@@ -53,7 +53,7 @@ jobs:
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,mode=max,dest=/tmp/.buildx-cache-new
           tags: |
-            ghcr.io/TomaszSmyk/zadanie1:v1
+            ghcr.io/tomaszsmyk/zadanie1:v1
           
       - name: Move cache
         run: |

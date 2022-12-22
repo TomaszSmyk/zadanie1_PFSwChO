@@ -67,8 +67,8 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          cache-from: type=registry
-          cache-to: type=registry,mode=max
+          cache-from: type=registry,ref=tomaszsmyk99/zadanie1:buildcache
+          cache-to: type=registry,ref=tomaszsmyk99/zadanie1:buildcache,mode=max
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           

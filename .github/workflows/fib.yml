@@ -2,8 +2,9 @@ name: Action na Zadanie 1 - czesc obowiazkowa, pkt 3
 
 on:
   workflow_dispatch:
-#   push:
-#     branches: [master]
+  push:
+    tags:
+      - "v*.*.*"
 
 jobs:
   zadanie1:

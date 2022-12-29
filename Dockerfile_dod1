@@ -1,0 +1,11 @@
+# --platform=$BUILDPLATFORM --> informacja ze ma pobrac obraz gcc za pomoca platformy obecnego systemu
+FROM --platform=$BUILDPLATFORM gcc:4.9 as compiler
+COPY Fibo.c .
+# deklaracja zmiennej
+ARG TARGETPLATFORM
+# uzycie zmiennej informujacej na jaka platforme ma sie zkompilowac
+RUN gcc --target=$TARGETPLATFORM -o fibo -static Fibo.c
+
+FROM scratch
+COPY --from=compiler fibo /
+ENTRYPOINT ["/fibo"]

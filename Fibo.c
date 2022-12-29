@@ -1,5 +1,6 @@
 #include <stdio.h>
 int main() {
+//komentarz
   int i, ileElem;
   unsigned long long prevElem = 0, nextElem = 1;
   unsigned long long nthElem = prevElem + nextElem;

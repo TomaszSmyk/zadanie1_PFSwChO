@@ -41,7 +41,7 @@ jobs:
         with:
           # list of Docker images to use as base name for tags
           images: |
-            ghcr.io/tomaszsmyk/zadanie1
+            ghcr.io/tomaszsmyk/zadanie1_dod1
           # generate Docker tags based on the following events/attributes
           tags: | 
             type=sha

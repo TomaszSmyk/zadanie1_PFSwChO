@@ -44,6 +44,7 @@ jobs:
             ghcr.io/tomaszsmyk/zadanie1
           # generate Docker tags based on the following events/attributes
           tags: | 
+            type=sha
             type=semver,pattern={{version}}
           
       - name: Cache Docker layers
